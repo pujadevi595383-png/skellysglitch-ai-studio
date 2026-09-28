@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkellysGlitch AI Studio</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 10%, #352080 0, transparent 35%),
+    radial-gradient(circle at 90% 20%, #064c68 0, transparent 30%),
+    #060711;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#7658ff,#00d9ff);
+  font-size: 22px;
+}
+
+.status {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #ffffff10;
+  border: 1px solid #ffffff18;
+  font-size: 12px;
+}
+
+.hero {
+  padding: 40px;
+  border-radius: 28px;
+  background: #101321dd;
+  border: 1px solid #ffffff15;
+}
+
+.hero small {
+  color: #9c91ff;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 1;
+  margin: 15px 0;
+  background: linear-gradient(90deg,#fff,#9c91ff,#5de3ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 700px;
+  color: #aeb5ca;
+  line-height: 1.7;
+}
+
+button {
+  border: 0;
+  border-radius: 13px;
+  padding: 14px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 8px 8px 0 0;
+}
+
+.primary {
+  background: linear-gradient(90deg,#7658ff,#00bfe9);
+}
+
+.secondary {
+  background: #ffffff12;
+  border: 1px solid #ffffff15;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.card {
+  background: #0c0f1ddd;
+  border: 1px solid #ffffff12;
+  border-radius: 22px;
+  padding: 22px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 13px;
+  border: 1px solid #ffffff15;
+  background: #070914;
+  color: white;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.step {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+  margin-top: 9px;
+  border-radius: 14px;
+  background: #ffffff06;
+}
+
+.number {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #171a2a;
+  color: #a49aff;
+  font-weight: bold;
+}
+
+.step small {
+  display: block;
+  color: #81899f;
+  margin-top: 3px;
+}
+
+.scenes {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+}
+
+.scene {
+  padding: 15px;
+  min-height: 120px;
+  border-radius: 15px;
+  background: linear-gradient(145deg,#15192b,#0b0d17);
+  border: 1px solid #ffffff10;
+}
+
+.scene p {
+  color: #8f96aa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#result {
+  display: none;
+  margin-top: 18px;
+}
+
+footer {
+  text-align: center;
+  color: #666d82;
+  font-size: 12px;
+  padding: 30px;
+}
+
+@media(max-width:750px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 27px;
+  }
+}
+
+@media(max-width:450px) {
+  .scenes {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">S</div>
+    SKELLYSGLITCH AI STUDIO
+  </div>
+
+  <div class="status">● ONLINE</div>
+</header>
+
+<section class="hero">
+
+<small>AI SHORTS COMMAND CENTER</small>
+
+<h1>Turn an idea into a cinematic Short.</h1>
+
+<p>
+Build your next SkellysGlitch video with an AI-first workflow:
+topic research, script generation, cinematic scene planning
+and YouTube packaging.
+</p>
+
+<button class="primary" onclick="generate()">
+⚡ Generate Today's Short
+</button>
+
+<button class="secondary" onclick="document.getElementById('topic').focus()">
+＋ Enter Topic
+</button>
+
+</section>
+
+<div class="grid">
+
+<section class="card">
+
+<h2>🎯 Video Brief</h2>
+
+<input
+id="topic"
+value="What if Earth stopped rotating for 5 seconds?"
+placeholder="Enter your What If topic"
+>
+
+<div class="step">
+<div class="number">01</div>
+<div>
+<b>Topic Hunter</b>
+<small>Find a strong curiosity gap</small>
+</div>
+</div>
+
+<div class="step">
+<div class="number">02</div>
+<div>
+<b>Research + Script</b>
+<small>Turn facts into a simple script</small>
+</div>
+</div>
+
+<div class="step">
+<div class="number">03</div>
+<div>
+<b>Visual Director</b>
+<small>Plan cinematic 3D shots</small>
+</div>
+</div>
+
+<div class="step">
+<div class="number">04</div>
+<div>
+<b>Scene Builder</b>
+<small>Create prompts for every scene</small>
+</div>
+</div>
+
+<div class="step">
+<div class="number">05</div>
+<div>
+<b>YouTube Manager</b>
+<small>Title, description and hashtags</small>
+</div>
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>🧠 AI Agent Output</h2>
+
+<div id="agent">
+<p style="color:#858ca3">
+Press Generate to create a production plan.
+</p>
+</div>
+
+<div id="result">
+
+<h3>🎬 Scene Pack</h3>
+
+<div class="scenes">
+
+<div class="scene">
+<b>01 · HOOK</b>
+<p>Earth spinning rapidly. Sudden visual freeze. Cinematic impact.</p>
+</div>
+
+<div class="scene">
+<b>02 · SCALE</b>
+<p>Globe visualization showing Earth's rotational speed.</p>
+</div>
+
+<div class="scene">
+<b>03 · CITY</b>
+<p>3D city simulation showing the physical effect.</p>
+</div>
+
+<div class="scene">
+<b>04 · OCEAN</b>
+<p>Global ocean movement visualized from orbit.</p>
+</div>
+
+<div class="scene">
+<b>05 · ATMOSPHERE</b>
+<p>Atmospheric movement and map overlays.</p>
+</div>
+
+<div class="scene">
+<b>06 · REVEAL</b>
+<p>Final cinematic reveal with a strong curiosity payoff.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+SkellysGlitch AI Studio · Frontend prototype
+</footer>
+
+</div>
+
+<script>
+
+function generate() {
+
+const topic =
+document.getElementById("topic").value ||
+"your topic";
+
+document.getElementById("agent").innerHTML =
+
+"<p style='color:#9c91ff'>⚡ Building production plan...</p>";
+
+setTimeout(function() {
+
+document.getElementById("agent").innerHTML =
+
+"<p style='line-height:1.7;color:#aeb5ca'>" +
+
+"<b>Topic:</b> " + topic +
+
+"<br><br>" +
+
+"<b>Hook:</b> Imagine if this happened for only 5 seconds..." +
+
+"<br><br>" +
+
+"<b>Style:</b> Fast cinematic 3D mini-documentary with " +
+"maps, simulations, scale comparisons and a final reveal." +
+
+"</p>";
+
+document.getElementById("result").style.display = "block";
+
+},700);
+
+}
+
+</script>
+
+</body>
+</html>
