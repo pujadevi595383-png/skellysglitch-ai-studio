@@ -1024,4 +1024,1672 @@
                       Realistic Cinematic
                     </option>
 
-                    <o
+                    <option value="cinematic documentary">
+  Cinematic Documentary
+</option>
+
+<option value="dark futuristic">
+  Dark Futuristic
+</option>
+
+<option value="ancient epic">
+  Ancient Epic
+</option>
+
+<option value="scientific visualization">
+  Scientific Visualization
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Video Format</label>
+
+<select id="aspectRatio">
+
+<option value="9:16" selected>
+  9:16 — Shorts
+</option>
+
+<option value="16:9">
+  16:9 — Landscape
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button
+  class="generate-btn"
+  id="generateBtn"
+  onclick="generate()">
+
+  <span class="generate-icon">✦</span>
+
+  <span>
+    Generate Cinematic Short
+  </span>
+
+  <span class="generate-arrow">→</span>
+
+</button>
+
+
+<div class="quick-title">
+  Quick ideas
+</div>
+
+
+<div class="quick-topics">
+
+<button onclick="setTopic('What if Earth stopped rotating for 5 seconds?')">
+  🌍 Earth stops rotating
+</button>
+
+<button onclick="setTopic('What if humans lived on Mars for 30 days?')">
+  🔴 Humans on Mars
+</button>
+
+<button onclick="setTopic('What if dinosaurs suddenly returned today?')">
+  🦖 Dinosaurs return
+</button>
+
+<button onclick="setTopic('What if the Moon disappeared for one day?')">
+  🌕 Moon disappears
+</button>
+
+<button onclick="setTopic('What if the oceans suddenly vanished?')">
+  🌊 Oceans vanish
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- STATUS -->
+
+<section class="status-panel" id="statusPanel">
+
+<div class="status-left">
+
+<div class="status-spinner" id="statusSpinner">
+  ✦
+</div>
+
+<div>
+
+<div class="status-title" id="statusTitle">
+  Ready to create
+</div>
+
+<div class="status-text" id="statusText">
+  Enter a topic and generate your cinematic Short.
+</div>
+
+</div>
+
+</div>
+
+<div class="status-badge" id="statusBadge">
+  READY
+</div>
+
+</section>
+
+
+
+<!-- MAIN GRID -->
+
+<div class="dashboard-grid">
+
+
+<!-- PREVIEW -->
+
+<section class="panel preview-panel">
+
+<div class="panel-header">
+
+<div>
+
+<div class="panel-kicker">
+  OUTPUT
+</div>
+
+<h2>Video Preview</h2>
+
+</div>
+
+<span class="panel-pill">
+  9:16
+</span>
+
+</div>
+
+
+<div class="video-stage" id="videoStage">
+
+<div class="video-placeholder" id="videoPlaceholder">
+
+<div class="play-orb">
+  ▶
+</div>
+
+<div class="placeholder-title">
+  Your cinematic Short will appear here
+</div>
+
+<div class="placeholder-sub">
+  Generate a video to preview the final result.
+</div>
+
+</div>
+
+<video
+  id="videoPlayer"
+  controls
+  playsinline
+  class="video-player">
+</video>
+
+</div>
+
+
+<div class="preview-actions">
+
+<button
+  class="secondary-btn"
+  onclick="downloadVideo()"
+  id="downloadBtn"
+  disabled>
+
+  ↓ Download Video
+
+</button>
+
+<button
+  class="secondary-btn"
+  onclick="copyTopic()">
+
+  ⧉ Copy Topic
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- AI SCRIPT -->
+
+<section class="panel script-panel">
+
+<div class="panel-header">
+
+<div>
+
+<div class="panel-kicker">
+  AI DIRECTOR
+</div>
+
+<h2>Script & Direction</h2>
+
+</div>
+
+<span class="live-pill">
+  ● AI
+</span>
+
+</div>
+
+
+<div class="script-output" id="scriptOutput">
+
+<div class="empty-output">
+
+<div class="empty-icon">
+  ✦
+</div>
+
+<div>
+  AI direction will appear here
+</div>
+
+<span>
+  Your generated hook, script and visual direction will be shown after generation.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- PIPELINE -->
+
+<section class="panel pipeline-panel">
+
+<div class="panel-header">
+
+<div>
+
+<div class="panel-kicker">
+  AUTOMATION
+</div>
+
+<h2>AI Production Pipeline</h2>
+
+</div>
+
+<span class="panel-pill">
+  5 STEPS
+</span>
+
+</div>
+
+
+<div class="pipeline">
+
+<div class="pipeline-step active" id="step1">
+
+<div class="step-number">
+  01
+</div>
+
+<div class="step-info">
+
+<strong>Topic Intelligence</strong>
+
+<span>
+  Analyze the idea and find the strongest curiosity angle.
+</span>
+
+</div>
+
+<div class="step-status">
+  READY
+</div>
+
+</div>
+
+
+<div class="pipeline-line"></div>
+
+
+<div class="pipeline-step" id="step2">
+
+<div class="step-number">
+  02
+</div>
+
+<div class="step-info">
+
+<strong>Script Engine</strong>
+
+<span>
+  Build hook, revelations, pacing and final reveal.
+</span>
+
+</div>
+
+<div class="step-status">
+  WAITING
+</div>
+
+</div>
+
+
+<div class="pipeline-line"></div>
+
+
+<div class="pipeline-step" id="step3">
+
+<div class="step-number">
+  03
+</div>
+
+<div class="step-info">
+
+<strong>Visual Director</strong>
+
+<span>
+  Convert the story into cinematic visual instructions.
+</span>
+
+</div>
+
+<div class="step-status">
+  WAITING
+</div>
+
+</div>
+
+
+<div class="pipeline-line"></div>
+
+
+<div class="pipeline-step" id="step4">
+
+<div class="step-number">
+  04
+</div>
+
+<div class="step-info">
+
+<strong>Scene Generator</strong>
+
+<span>
+  Generate the AI video using the selected visual style.
+</span>
+
+</div>
+
+<div class="step-status">
+  WAITING
+</div>
+
+</div>
+
+
+<div class="pipeline-line"></div>
+
+
+<div class="pipeline-step" id="step5">
+
+<div class="step-number">
+  05
+</div>
+
+<div class="step-info">
+
+<strong>Final Output</strong>
+
+<span>
+  Prepare the generated Short for preview and download.
+</span>
+
+</div>
+
+<div class="step-status">
+  WAITING
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE TIMELINE -->
+
+<section class="panel timeline-panel">
+
+<div class="panel-header">
+
+<div>
+
+<div class="panel-kicker">
+  STORYBOARD
+</div>
+
+<h2>Scene Timeline</h2>
+
+</div>
+
+<span class="panel-pill">
+  AUTO
+</span>
+
+</div>
+
+
+<div class="timeline" id="timeline">
+
+<div class="timeline-empty">
+  Scenes will be generated from your topic.
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SETTINGS -->
+
+<section class="panel settings-panel">
+
+<div class="panel-header">
+
+<div>
+
+<div class="panel-kicker">
+  SYSTEM
+</div>
+
+<h2>Studio Settings</h2>
+
+</div>
+
+<span class="status-badge small">
+  CONFIGURED
+</span>
+
+</div>
+
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<div class="setting-icon">
+  ✦
+</div>
+
+<div>
+
+<strong>AI Model</strong>
+
+<span>
+  Gemini Omni 1.1 Flash
+</span>
+
+</div>
+
+</div>
+
+
+<div class="setting-card">
+
+<div class="setting-icon">
+  ▣
+</div>
+
+<div>
+
+<strong>Video Format</strong>
+
+<span>
+  Vertical 9:16
+</span>
+
+</div>
+
+</div>
+
+
+<div class="setting-card">
+
+<div class="setting-icon">
+  ⚡
+</div>
+
+<div>
+
+<strong>Backend</strong>
+
+<span>
+  Google Apps Script
+</span>
+
+</div>
+
+</div>
+
+
+<div class="setting-card">
+
+<div class="setting-icon">
+  🔐
+</div>
+
+<div>
+
+<strong>API Key</strong>
+
+<span>
+  Stored server-side
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div>
+  SKELLYSGLITCH AI STUDIO
+</div>
+
+<div>
+  Cinematic AI production workspace
+</div>
+
+</footer>
+
+
+</div>
+
+</main>
+
+</div>
+
+
+<script>
+
+const BACKEND_URL =
+"https://script.google.com/macros/s/AKfycbw46mJvOjVJZUH-qkOas44gVCaIUereAw3Fvz9LlOAInOlBDReFksZeW1gmwvjFSoAZ/exec";
+
+
+let generatedVideoUrl = "";
+
+let generatedVideoBlob = null;
+
+
+
+function setTopic(topic) {
+
+  const input = document.getElementById("topic");
+
+  if (input) {
+
+    input.value = topic;
+
+    input.focus();
+
+  }
+
+}
+
+
+
+function copyTopic() {
+
+  const input = document.getElementById("topic");
+
+  if (!input || !input.value.trim()) {
+
+    return;
+
+  }
+
+  navigator.clipboard.writeText(input.value.trim())
+
+    .then(() => {
+
+      setStatus(
+        "Topic copied",
+        "The current topic has been copied to your clipboard.",
+        "READY"
+      );
+
+    })
+
+    .catch(() => {});
+
+}
+
+
+
+function toggleSidebar() {
+
+  const sidebar = document.getElementById("sidebar");
+
+  sidebar.classList.toggle("open");
+
+}
+
+
+
+function showSection(section, button) {
+
+  document.querySelectorAll(".nav button").forEach(btn => {
+
+    btn.classList.remove("active");
+
+  });
+
+
+  if (button) {
+
+    button.classList.add("active");
+
+  }
+
+
+  const breadcrumb =
+    document.getElementById("breadcrumb");
+
+
+  const names = {
+
+    studio: "Studio",
+
+    script: "Script",
+
+    scenes: "Scenes",
+
+    preview: "Preview",
+
+    settings: "Settings"
+
+  };
+
+
+  if (breadcrumb) {
+
+    breadcrumb.textContent =
+      names[section] || "Studio";
+
+  }
+
+
+  const targetMap = {
+
+    studio: ".generator-card",
+
+    script: ".script-panel",
+
+    scenes: ".timeline-panel",
+
+    preview: ".preview-panel",
+
+    settings: ".settings-panel"
+
+  };
+
+
+  const target =
+    document.querySelector(targetMap[section]);
+
+
+  if (target) {
+
+    target.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
+
+  }
+
+
+  const sidebar =
+    document.getElementById("sidebar");
+
+  if (sidebar) {
+
+    sidebar.classList.remove("open");
+
+  }
+
+}
+
+
+
+function setStatus(title, text, badge) {
+
+  const titleEl =
+    document.getElementById("statusTitle");
+
+  const textEl =
+    document.getElementById("statusText");
+
+  const badgeEl =
+    document.getElementById("statusBadge");
+
+
+  if (titleEl) {
+
+    titleEl.textContent = title;
+
+  }
+
+
+  if (textEl) {
+
+    textEl.textContent = text;
+
+  }
+
+
+  if (badgeEl) {
+
+    badgeEl.textContent = badge || "READY";
+
+  }
+
+}
+
+
+
+function setPipelineStep(number, state) {
+
+  const step =
+    document.getElementById("step" + number);
+
+  if (!step) return;
+
+
+  step.classList.remove(
+    "active",
+    "complete",
+    "working"
+  );
+
+
+  const status =
+    step.querySelector(".step-status");
+
+
+  if (state === "working") {
+
+    step.classList.add("working");
+
+    if (status) status.textContent = "RUNNING";
+
+  }
+
+
+  if (state === "complete") {
+
+    step.classList.add("complete");
+
+    if (status) status.textContent = "DONE";
+
+  }
+
+
+  if (state === "active") {
+
+    step.classList.add("active");
+
+    if (status) status.textContent = "READY";
+
+  }
+
+}
+
+
+
+function renderScript(data) {
+
+  const output =
+    document.getElementById("scriptOutput");
+
+  if (!output) return;
+
+
+  const title =
+    data.title ||
+    data.topic ||
+    "Generated Short";
+
+
+  const hook =
+    data.hook ||
+    "What if this actually happened?";
+
+
+  const script =
+    data.script ||
+    data.story ||
+    "AI-generated story will appear here.";
+
+
+  const visual =
+    data.visualDirection ||
+    data.visual ||
+    "Cinematic 3D documentary visuals.";
+
+
+  output.innerHTML = `
+
+    <div class="script-block">
+
+      <div class="script-label">
+        TITLE
+      </div>
+
+      <div class="script-value title-value">
+        ${escapeHtml(title)}
+      </div>
+
+    </div>
+
+
+    <div class="script-block">
+
+      <div class="script-label">
+        HOOK
+      </div>
+
+      <div class="script-value">
+        ${escapeHtml(hook)}
+      </div>
+
+    </div>
+
+
+    <div class="script-block">
+
+      <div class="script-label">
+        SCRIPT
+      </div>
+
+      <div class="script-value script-text">
+        ${escapeHtml(script)}
+      </div>
+
+    </div>
+
+
+    <div class="script-block">
+
+      <div class="script-label">
+        VISUAL DIRECTION
+      </div>
+
+      <div class="script-value">
+        ${escapeHtml(visual)}
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+
+function renderTimeline(data) {
+
+  const timeline =
+    document.getElementById("timeline");
+
+  if (!timeline) return;
+
+
+  let scenes = data.scenes || [];
+
+
+  if (!Array.isArray(scenes)) {
+
+    scenes = [];
+
+  }
+
+
+  if (!scenes.length) {
+
+    timeline.innerHTML = `
+
+      <div class="timeline-empty">
+
+        AI video generated successfully.
+        Detailed scene data was not returned by the backend.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  timeline.innerHTML = "";
+
+
+  scenes.forEach((scene, index) => {
+
+    const card =
+      document.createElement("div");
+
+
+    card.className = "scene-card";
+
+
+    const title =
+      scene.title ||
+      scene.name ||
+      `Scene ${index + 1}`;
+
+
+    const description =
+      scene.description ||
+      scene.visual ||
+      scene.prompt ||
+      "Cinematic scene";
+
+
+    card.innerHTML = `
+
+      <div class="scene-number">
+        ${String(index + 1).padStart(2, "0")}
+      </div>
+
+      <div class="scene-content">
+
+        <strong>
+          ${escapeHtml(title)}
+        </strong>
+
+        <span>
+          ${escapeHtml(description)}
+        </span>
+
+      </div>
+
+    `;
+
+
+    timeline.appendChild(card);
+
+  });
+
+}
+
+
+
+function escapeHtml(value) {
+
+  return String(value)
+
+    .replace(/&/g, "&amp;")
+
+    .replace(/</g, "&lt;")
+
+    .replace(/>/g, "&gt;")
+
+    .replace(/"/g, "&quot;")
+
+    .replace(/'/g, "&#039;");
+
+}
+
+
+
+function base64ToBlob(
+  base64,
+  mimeType
+) {
+
+  const byteCharacters =
+    atob(base64);
+
+
+  const sliceSize = 1024;
+
+
+  const byteArrays = [];
+
+
+  for (
+    let offset = 0;
+    offset < byteCharacters.length;
+    offset += sliceSize
+  ) {
+
+    const slice =
+      byteCharacters.slice(
+        offset,
+        offset + sliceSize
+      );
+
+
+    const byteNumbers =
+      new Array(slice.length);
+
+
+    for (
+      let i = 0;
+      i < slice.length;
+      i++
+    ) {
+
+      byteNumbers[i] =
+        slice.charCodeAt(i);
+
+    }
+
+
+    const byteArray =
+      new Uint8Array(byteNumbers);
+
+
+    byteArrays.push(byteArray);
+
+  }
+
+
+  return new Blob(
+    byteArrays,
+    {
+      type: mimeType || "video/mp4"
+    }
+  );
+
+}
+
+
+
+function showVideo(
+  base64,
+  mimeType
+) {
+
+  const player =
+    document.getElementById("videoPlayer");
+
+
+  const placeholder =
+    document.getElementById("videoPlaceholder");
+
+
+  if (!player || !base64) {
+
+    return false;
+
+  }
+
+
+  try {
+
+    generatedVideoBlob =
+      base64ToBlob(
+        base64,
+        mimeType || "video/mp4"
+      );
+
+
+    generatedVideoUrl =
+      URL.createObjectURL(
+        generatedVideoBlob
+      );
+
+
+    player.src =
+      generatedVideoUrl;
+
+
+    player.style.display =
+      "block";
+
+
+    if (placeholder) {
+
+      placeholder.style.display =
+        "none";
+
+    }
+
+
+    const download =
+      document.getElementById("downloadBtn");
+
+
+    if (download) {
+
+      download.disabled = false;
+
+    }
+
+
+    return true;
+
+  } catch (error) {
+
+    console.error(error);
+
+    return false;
+
+  }
+
+}
+
+
+
+function showVideoUrl(url) {
+
+  const player =
+    document.getElementById("videoPlayer");
+
+
+  const placeholder =
+    document.getElementById("videoPlaceholder");
+
+
+  if (!player || !url) {
+
+    return false;
+
+  }
+
+
+  player.src = url;
+
+  player.style.display =
+    "block";
+
+
+  if (placeholder) {
+
+    placeholder.style.display =
+      "none";
+
+  }
+
+
+  generatedVideoUrl = url;
+
+
+  const download =
+    document.getElementById("downloadBtn");
+
+
+  if (download) {
+
+    download.disabled = false;
+
+  }
+
+
+  return true;
+
+}
+
+
+
+function downloadVideo() {
+
+  if (!generatedVideoUrl) {
+
+    return;
+
+  }
+
+
+  const link =
+    document.createElement("a");
+
+
+  link.href =
+    generatedVideoUrl;
+
+
+  link.download =
+    "skellysglitch-cinematic-short.mp4";
+
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+}
+
+
+
+async function generate() {
+
+  const topicInput =
+    document.getElementById("topic");
+
+
+  const styleInput =
+    document.getElementById("visualStyle");
+
+
+  const ratioInput =
+    document.getElementById("aspectRatio");
+
+
+  const button =
+    document.getElementById("generateBtn");
+
+
+  if (!topicInput) {
+
+    return;
+
+  }
+
+
+  const topic =
+    topicInput.value.trim();
+
+
+  if (!topic) {
+
+    setStatus(
+      "Topic required",
+      "Enter an idea before starting the AI production pipeline.",
+      "ERROR"
+    );
+
+    topicInput.focus();
+
+    return;
+
+  }
+
+
+  if (button) {
+
+    button.disabled = true;
+
+    button.classList.add("loading");
+
+    button.innerHTML = `
+      <span class="generate-icon">◌</span>
+      <span>Generating cinematic Short...</span>
+      <span class="generate-arrow">→</span>
+    `;
+
+  }
+
+
+  setStatus(
+    "Starting AI production",
+    "Sending your topic to the cinematic AI backend.",
+    "RUNNING"
+  );
+
+
+  setPipelineStep(1, "working");
+
+  setPipelineStep(2, "active");
+
+
+  const style =
+    styleInput
+      ? styleInput.value
+      : "realistic cinematic";
+
+
+  const aspectRatio =
+    ratioInput
+      ? ratioInput.value
+      : "9:16";
+
+
+  try {
+
+    const response =
+      await fetch(
+        BACKEND_URL,
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "text/plain;charset=utf-8"
+
+          },
+
+          body: JSON.stringify({
+
+            topic: topic,
+
+            style: style,
+
+            aspectRatio: aspectRatio
+
+          })
+
+        }
+      );
+
+
+    setPipelineStep(1, "complete");
+
+    setPipelineStep(2, "working");
+
+
+    const raw =
+      await response.text();
+
+
+    let data;
+
+
+    try {
+
+      data =
+        JSON.parse(raw);
+
+    } catch (parseError) {
+
+      throw new Error(
+        "Backend returned an invalid response: " +
+        raw.slice(0, 500)
+      );
+
+    }
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        data.error ||
+        `Backend HTTP ${response.status}`
+      );
+
+    }
+
+
+    if (!data.success) {
+
+      let details =
+        data.error ||
+        "AI backend returned an error.";
+
+
+      if (data.httpStatus) {
+
+        details +=
+          ` HTTP ${data.httpStatus}.`;
+
+      }
+
+
+      if (data.details) {
+
+        details +=
+          " " +
+          String(data.details).slice(
+            0,
+            700
+          );
+
+      }
+
+
+      throw new Error(details);
+
+    }
+
+
+    setPipelineStep(2, "complete");
+
+    setPipelineStep(3, "working");
+
+
+    const result =
+      data.data || data;
+
+
+    renderScript(result);
+
+    renderTimeline(result);
+
+
+    setPipelineStep(3, "complete");
+
+    setPipelineStep(4, "working");
+
+
+    let videoShown = false;
+
+
+    if (
+      result.videoBase64
+    ) {
+
+      videoShown =
+        showVideo(
+          result.videoBase64,
+          result.mimeType ||
+          "video/mp4"
+        );
+
+    }
+
+
+    if (
+      !videoShown &&
+      result.video
+    ) {
+
+      if (
+        typeof result.video === "string"
+      ) {
+
+        if (
+          result.video.startsWith("data:")
+        ) {
+
+          videoShown =
+            showVideoUrl(
+              result.video
+            );
+
+        } else {
+
+          videoShown =
+            showVideo(
+              result.video,
+              result.mimeType
+            );
+
+        }
+
+      }
+
+      else if (
+        result.video.data
+      ) {
+
+        videoShown =
+          showVideo(
+            result.video.data,
+            result.video.mime_type ||
+            result.mimeType ||
+            "video/mp4"
+          );
+
+      }
+
+      else if (
+        result.video.uri
+      ) {
+
+        videoShown =
+          showVideoUrl(
+            result.video.uri
+          );
+
+      }
+
+    }
+
+
+    if (
+      !videoShown &&
+      result.data
+    ) {
+
+      videoShown =
+        showVideo(
+          result.data,
+          result.mimeType
+        );
+
+    }
+
+
+    if (
+      !videoShown &&
+      result.videoUrl
+    ) {
+
+      videoShown =
+        showVideoUrl(
+          result.videoUrl
+        );
+
+    }
+
+
+    if (
+      !videoShown &&
+      result.uri
+    ) {
+
+      videoShown =
+        showVideoUrl(
+          result.uri
+        );
+
+    }
+
+
+    setPipelineStep(4, "complete");
+
+    setPipelineStep(5, "working");
+
+
+    if (videoShown) {
+
+      setStatus(
+        "Cinematic Short ready",
+        "Your generated video is available in the preview panel.",
+        "DONE"
+      );
+
+    } else {
+
+      setStatus(
+        "AI response received",
+        "The backend responded, but no playable video was returned.",
+        "CHECK"
+      );
+
+    }
+
+
+    setPipelineStep(5, "complete");
+
+
+  } catch (error) {
+
+    console.error(
+      "Generation error:",
+      error
+    );
+
+
+    setStatus(
+      "Generation failed",
+      error.message ||
+      "Something went wrong.",
+      "ERROR"
+    );
+
+
+    for (
+      let i = 1;
+      i <= 5;
+      i++
+    ) {
+
+      const step =
+        document.getElementById(
+          "step" + i
+        );
+
+
+      if (step) {
+
+        step.classList.remove(
+          "working"
+        );
+
+      }
+
+    }
+
+
+  } finally {
+
+    if (button) {
+
+      button.disabled = false;
+
+      button.classList.remove(
+        "loading"
+      );
+
+      button.innerHTML = `
+        <span class="generate-icon">✦</span>
+        <span>Generate Cinematic Short</span>
+        <span class="generate-arrow">→</span>
+      `;
+
+    }
+
+  }
+
+}
+
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    const player =
+      document.getElementById(
+        "videoPlayer"
+      );
+
+
+    if (player) {
+
+      player.style.display =
+        "none";
+  
+    }
+
+    setStatus(
+      "Ready to create",
+      "Enter a topic and generate your cinematic Short.",
+      "READY"
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
