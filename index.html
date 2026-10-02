@@ -395,8 +395,13 @@ async function generate() {
 
     const data = await response.json();
 
-    if (!data.success) {
-      throw new Error(data.error || "AI backend error");
+    throw new Error(
+  (data.error || "Omni video generation failed.") +
+  "\nHTTP: " +
+  (data.httpStatus || "unknown") +
+  "\nDetails: " +
+  (data.details || "No details returned")
+);
     }
 
     const ai = data.data;
