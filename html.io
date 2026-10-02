@@ -359,38 +359,80 @@ SkellysGlitch AI Studio · Frontend prototype
 
 <script>
 
-function generate() {
+const BACKEND_URL =
+"https://script.google.com/macros/s/AKfycbzJq7UBIpUJS3wao4BPWXdRWDvZ3O2_lDtEfYBGiJdNk2a2f8OD2PQjpXwpOZI45VBR/exec";
 
-const topic =
-document.getElementById("topic").value ||
-"your topic";
+async function generate() {
 
-document.getElementById("agent").innerHTML =
+  const topic =
+    document.getElementById("topic").value.trim();
 
-"<p style='color:#9c91ff'>⚡ Building production plan...</p>";
+  if (!topic) {
+    alert("Please enter a topic first.");
+    return;
+  }
 
-setTimeout(function() {
+  const agent = document.getElementById("agent");
+  const result = document.getElementById("result");
 
-document.getElementById("agent").innerHTML =
+  agent.innerHTML =
+    "<p style='color:#9c91ff'>⚡ Gemini AI is creating your Short...</p>";
 
-"<p style='line-height:1.7;color:#aeb5ca'>" +
+  result.style.display = "none";
 
-"<b>Topic:</b> " + topic +
+  try {
 
-"<br><br>" +
+    const response = await fetch(BACKEND_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify({
+        topic: topic
+      })
+    });
 
-"<b>Hook:</b> Imagine if this happened for only 5 seconds..." +
+    const data = await response.json();
 
-"<br><br>" +
+    if (!data.success) {
+      throw new Error(data.error || "AI backend error");
+    }
 
-"<b>Style:</b> Fast cinematic 3D mini-documentary with " +
-"maps, simulations, scale comparisons and a final reveal." +
+    const ai = data.data;
 
-"</p>";
+    agent.innerHTML =
+      "<div style='line-height:1.7;color:#aeb5ca'>" +
 
-document.getElementById("result").style.display = "block";
+      "<b>🎯 Title:</b><br>" +
+      (ai.title || "No title generated") +
 
-},700);
+      "<br><br>" +
+
+      "<b>⚡ Hook:</b><br>" +
+      (ai.hook || "No hook generated") +
+
+      "<br><br>" +
+
+      "<b>📝 Script:</b><br>" +
+      (ai.script || "No script generated") +
+
+      "</div>";
+
+    result.style.display = "block";
+
+    console.log("REAL GEMINI RESPONSE:", ai);
+
+  } catch (error) {
+
+    console.error(error);
+
+    agent.innerHTML =
+      "<p style='color:#ff7777'>" +
+      "❌ AI generation failed.<br><br>" +
+      error.message +
+      "</p>";
+
+  }
 
 }
 
